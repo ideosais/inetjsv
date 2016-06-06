@@ -1,0 +1,7 @@
+/vendor
+/tests
+/node_modules
+/public/storage
+/bower_components
+.env
+/.idea
