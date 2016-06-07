@@ -28,8 +28,8 @@ class AlterMUsuariosTable extends Migration
     {
         Schema::table('m_usuarios', function (Blueprint $table) {
 
-            $table->dropForeign('m_usuarios_m_delegacion_id_foreign');
-            $table->dropForeign('m_usuarios_m_empresa_id_foreign');
+            $table->dropForeign('conta_activos_m_delegacion_id_foreign');
+            $table->dropForeign('conta_activos_m_empresa_id_foreign');
         });
     }
 }

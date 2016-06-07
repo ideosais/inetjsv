@@ -21,5 +21,7 @@ Route::post('/auth/list/post', 'UsuariosController@inline_update');
 Route::resource('empresa','EmpresasController');
 Route::resource('delegacion','DelegacionesController');
 Route::resource('/auth/list','UsuariosController');
+Route::resource('activo','ActivosController');
+
 
 

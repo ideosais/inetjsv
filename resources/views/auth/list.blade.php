@@ -91,7 +91,6 @@
 
 <div class="container">
 <h1 class="text-primary">Control de Usuarios</h1>
-<div id="console_event"></div>
 
 <table class="table table-bordered" id="MyTable">
     <thead>
