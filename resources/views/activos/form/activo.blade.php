@@ -24,16 +24,16 @@
             <div class="row">
                 <div class="col-xs-4">
                     {!! Form::label('nombre','Nombre: ') !!}
-                    {!! Form::text('nombre',null,['id'=>'nombre','class'=>'form-control','placeholder'=>'Nombre del activo'])!!}
+                    {!! Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre del activo'])!!}
                 </div>
                 <div class="col-xs-4">
-                    {!! Form::label('m_delegacion_id','Delegacion: ') !!}
-                    {!!Form::select('m_delegacion_id', \App\Delegacion::lists('descripcion','id'), null , ['id'=>'m_delegacion_id', 'class' => 'form-control', 'placeholder' => '--- Selecciona delegación ---' ])!!}
+                    {!! Form::label('delegacion','Delegacion: ') !!}
+                    {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control', 'placeholder' => '--- Selecciona delegación ---' ])!!}
 
                 </div>
                 <div class="col-xs-4">
-                    {!! Form::label('m_empresa_id','Empresa: ') !!}
-                    {!!Form::select('m_empresa_id', \App\Empresa::lists('descripcion','id') , null , ['id'=>'m_empresa_id', 'class' => 'form-control','placeholder' => '--- Selecciona empresa ---'])!!}
+                    {!! Form::label('empresa','Empresa: ') !!}
+                    {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Selecciona empresa ---'])!!}
                 </div>
             </div>
         </div>
@@ -81,8 +81,8 @@
 
                 </div>
                 <div class="col-xs-4">
-                    {!! Form::label('m_resp_mtmo_id','Responsable Mantenimiento: ') !!}
-                    {!!Form::select('m_resp_mtmo_id', \App\Resp_mtmo::lists('descripcion','id') , null , ['id'=>'m_resp_mtmo_id', 'class' => 'form-control','placeholder' => '--- Selecciona responsable ---'])!!}
+                    {!! Form::label('responsable_mtmo','Responsable Mantenimiento: ') !!}
+                    {!!Form::select('responsable_mtmo', \App\Resp_mtmo::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Selecciona responsable ---'])!!}
                 </div>
             </div>
         </div>

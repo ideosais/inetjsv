@@ -11,17 +11,22 @@
 |
 */
 
-Route::auth();
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
-Route::get('/auth/list', 'UsuariosController@index');
-Route::post('/auth/list/post', 'UsuariosController@inline_update');
+Route::group(['middelware' => 'web'], function() {
 
-Route::resource('empresa','EmpresasController');
-Route::resource('delegacion','DelegacionesController');
-Route::resource('/auth/list','UsuariosController');
-Route::resource('activo','ActivosController');
+    Route::auth();
+
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
+    Route::get('/auth/list', 'UsuariosController@index');
+    Route::post('/auth/list/post', 'UsuariosController@inline_update');
+
+    Route::resource('empresa','EmpresasController');
+    Route::resource('delegacion','DelegacionesController');
+    Route::resource('/auth/list','UsuariosController');
+    Route::resource('activo','ActivosController');
+
+});
 
 
 

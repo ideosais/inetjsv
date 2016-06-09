@@ -369,10 +369,10 @@ table.dataTable thead .sorting:after {
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 200px;
+    left: 185px;
     width: 0;
     height: 100%;
-    margin-left: -200px;
+    margin-left: -185px;
     overflow-y: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -382,7 +382,7 @@ table.dataTable thead .sorting:after {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 200px;
+    width: 185px;
 }
 
 #page-content-wrapper {
@@ -393,12 +393,12 @@ table.dataTable thead .sorting:after {
 
 #wrapper.toggled #page-content-wrapper {
     position: relative;
-    margin-right: -200px;
+    margin-right: -185px;
 }
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 200px;
+        padding-left: 185px;
     }
 
     #wrapper.toggled {
@@ -406,7 +406,7 @@ table.dataTable thead .sorting:after {
     }
 
     #sidebar-wrapper {
-        width: 200px;
+        width: 185px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

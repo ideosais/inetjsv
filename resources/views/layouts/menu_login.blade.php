@@ -4,71 +4,279 @@
         <ul class="nav" id="side-menu">
 
             <li>
-                <a href="#"><i class="fa fa-film fa-fw"></i> SACE<span class="fa arrow"></span></a>
+                <a href="#"><i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;SACE<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{!!URL::to('/pelicula/create')!!}"><i class='fa fa-plus fa-fw'></i> Stocks</a>
+                        <a href="{!!URL::to('/sace/stock')!!}"><i class='glyphicon glyphicon-th'></i> Stocks</a>
                     </li>
                     <li>
-                        <a href="{!!URL::to('/pelicula')!!}"><i class='fa fa-list-ol fa-fw'></i> Movs Terminal</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{!!URL::to('/genero/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                        <a href="{!!URL::to('/sace/movs_terminal')!!}"><i class='glyphicon glyphicon-resize-horizontal'></i> Movimientos Terminal</a>
                     </li>
                     <li>
-                        <a href="{!!URL::to('/genero')!!}"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li>
-                        <a href="#"><i class='fa fa-list-ol fa-fw'></i> Second Level Item </a>
+                        <a href="{!!URL::to('/sace/historial')!!}"><i class='glyphicon glyphicon-list-alt'></i> Historial</a>
                     </li>
                     <li>
-                        <a href="#"><i class='fa fa-list-ol fa-fw'></i> Second Level Item </a>
+                        <a href="{!!URL::to('/sace/cesion')!!}"><i class='glyphicon glyphicon-globe'></i> Cesión contenedor</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-child fa-fw"></i> Supervisor<span class="fa arrow"></span></a>
+                        <a href="{!!URL::to('/sace/averias')!!}"><i class='glyphicon glyphicon-wrench'></i> Averías</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/sace/ocupacion')!!}"><i class='glyphicon glyphicon-euro'></i> Ocupación</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level collapse">
                             <li>
-                                <a href="#"><i class='fa fa-list-ol fa-fw'></i> Second Level Item </a>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Gestión ficheros</a>
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+                <a href="#"><i class="glyphicon glyphicon-folder-close"></i>&nbsp;&nbsp;Operaciones<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
                     <li>
-                        <a href="blank.html">Blank Page</a>
+                        <a href="{!!URL::to('/operaciones/informes')!!}"><i class='glyphicon glyphicon-duplicate'></i> Informes</a>
                     </li>
                     <li>
-                        <a href="login.html">Login Page</a>
+                        <a href="{!!URL::to('/operaciones/escalas')!!}"><i class='glyphicon glyphicon-bullhorn'></i> Escalas</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/operaciones/facturacion')!!}"><i class='glyphicon glyphicon-pencil'></i> Facturacion</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-wrench"></i>&nbsp;&nbsp;Taller<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/taller/partes')!!}"><i class='glyphicon glyphicon-duplicate'></i> Partes trabajo</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/taller/pptos')!!}"><i class='glyphicon glyphicon-envelope'></i> Presupuestos</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/taller/facturacion')!!}"><i class='glyphicon glyphicon-pencil'></i> Facturacion</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-th"></i>&nbsp;&nbsp;Almacén<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/almacen/ordenes')!!}"><i class='glyphicon glyphicon-edit'></i> Ordenes trabajo</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/almacen/partes')!!}"><i class='glyphicon glyphicon-list-alt'></i> Partes trabajo</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/almacen/planning')!!}"><i class='glyphicon glyphicon-dashboard'></i> Planificación</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-plus"></i>&nbsp;&nbsp;Seguros<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/seguros/expedientes')!!}"><i class='glyphicon glyphicon-list-alt'></i> Expedientes</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Informes</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> Comerciales</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-inbox"></i>&nbsp;&nbsp;Calidad<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> ISO 9001</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/expedientes')!!}"><i class='glyphicon glyphicon-list-alt'></i> Procedimientos</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Manuales técnicos</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Gestión ficheros</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-euro"></i>&nbsp;&nbsp;Caja / VISA<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/caja/apuntes')!!}"><i class='glyphicon glyphicon-list-alt'></i> Apuntes Caja</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Apuntes VISA</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> Arqueo Caja</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> Contabilidad</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-record"></i>&nbsp;&nbsp;Activos<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{!!URL::to('/activo/create')!!}"><i class='glyphicon glyphicon-list-alt'></i> Fichas activo</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Informes</a>
+                    </li>
+                    <li>
+                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> Contabilidad</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-home'></i> Terminales </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-bell'></i> Gestión averías</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-eye-open'></i> Análisis equipo</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class='glyphicon glyphicon-floppy-open'></i> Importación datos</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
             </li>
 
             <li>
@@ -91,9 +299,9 @@
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 
-    <div class="navbar-header">
+    <div class="navbar-header" style="text-align: center">
 
-        <a class="navbar-brand" href="#">Bienvenid@ a la Intranet del Grupo JSV</a>
+        <a class="navbar-brand" href="#" ><img alt="Brand" style="float: left; margin: -10px 15px 15px 0px;" width="40" height="40" src="/img/JSV_logo_RGB_48.png"><i>Bienvenid@ a la Intranet del Grupo JSV</i></a>
 
     </div>
 
