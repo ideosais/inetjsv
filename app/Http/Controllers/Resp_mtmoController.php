@@ -12,6 +12,11 @@ use Illuminate\Routing\Route;
 class Resp_mtmoController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $resps_mtmo = Delegacion::get();

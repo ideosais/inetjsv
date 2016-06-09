@@ -10,6 +10,7 @@
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/bootstrap-editable.css')!!}
     {!!Html::style('css/bootstrap-toggle.min.css')!!}
+    {!!Html::style('css/bootstrap-datetimepicker.min.css')!!}
     {!!Html::style('css/fontawesome-iconpicker.min.css')!!}
     {!!Html::style('css/bootstrap.custom.css')!!}
     {!!Html::style('css/sb-admin-2.css')!!}
@@ -21,12 +22,16 @@
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/bootstrap-editable.min.js')!!}
     {!!Html::script('js/bootstrap-toggle.min.js')!!}
+    {!!Html::script('js/moment.js')!!}
+    {!!Html::script('js/locale/es.js')!!}
+    {!!Html::script('js/bootstrap-datetimepicker.min.js')!!}
     {!!Html::script('js/fontawesome-iconpicker.js')!!}
     {!!Html::script('js/iconset-glyphicon.min.js')!!}
     {!!Html::script('js/metisMenu.min.js')!!}
     {!!Html::script('js/sb-admin-2.js')!!}
     {!!Html::script('js/alert.js')!!}
     {!!Html::script('js/datatables.js')!!}
+
 
 </head>
 

@@ -12,6 +12,11 @@ use Illuminate\Routing\Route;
 class DelegacionesController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $delegaciones = Delegacion::get();
