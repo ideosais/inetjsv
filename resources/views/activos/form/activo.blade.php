@@ -28,12 +28,12 @@
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('delegacion','Delegacion: ') !!}
-                    {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control', 'placeholder' => '--- Selecciona delegación ---' ])!!}
+                    {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control', 'placeholder' => '--- Delegación ---' ])!!}
 
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('empresa','Empresa: ') !!}
-                    {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Selecciona empresa ---'])!!}
+                    {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Empresa ---'])!!}
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('responsable_mtmo','Responsable Mantenimiento: ') !!}
-                    {!!Form::select('responsable_mtmo', \App\Resp_mtmo::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Selecciona responsable ---'])!!}
+                    {!!Form::select('responsable_mtmo', \App\Resp_mtmo::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Responsable ---'])!!}
                 </div>
             </div>
         </div>
