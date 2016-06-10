@@ -21,7 +21,7 @@
 
                             @include('activos.form.activo')
 
-                            <button type="submit" id="alta_activo" class="btn btn-lg btn-primary"><i class="fa fa-btn fa-edit"></i> Alta nuevo activo </button>
+                            <button type="submit" id="buscar_activo" class="btn btn-lg btn-primary"><i class="fa fa-btn fa-edit"></i> Alta nuevo activo </button>
                             {!! Form::close() !!}
 
                         </div>

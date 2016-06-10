@@ -12,6 +12,11 @@ class Activo extends Model
         'fecha_compra', 'valor_venta', 'fecha_venta', 'alive', 'fecha_baja', 'm_delegacion_id','m_empresa_id',
         'ubicacion','plan_mtmo','m_resp_mtmo_id','fecha_utl_revision','historial',];
 
+    public function scopeNombre($query, $nombre)
+    {
+        $query->where('nombre', "LIKE", "%$nombre%");
+    }
+
     function delegaciones() {
         return $this->hasOne('Delegacion', 'm_delegacion_id', 'id');
     }

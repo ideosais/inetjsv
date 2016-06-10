@@ -250,13 +250,13 @@
                 <a href="#"><i class="glyphicon glyphicon-record"></i>&nbsp;&nbsp;Activos<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{!!URL::to('/activo/create')!!}"><i class='glyphicon glyphicon-list-alt'></i> Fichas activo</a>
+                        <a href="{!!URL::to('/activo')!!}"><i class='glyphicon glyphicon-list-alt'></i> Fichas activo</a>
                     </li>
                     <li>
-                        <a href="{!!URL::to('/seguros/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Informes</a>
+                        <a href="{!!URL::to('/activo/informes')!!}"><i class='glyphicon glyphicon-text-color'></i> Informes</a>
                     </li>
                     <li>
-                        <a href="{!!URL::to('/seguros/comercial')!!}"><i class='glyphicon glyphicon-user'></i> Contabilidad</a>
+                        <a href="{!!URL::to('/activo/conta')!!}"><i class='glyphicon glyphicon-user'></i> Contabilidad</a>
                     </li>
                     <li>
                         <a href="#"><i class="glyphicon glyphicon-lock"></i> Supervisor<span class="fa arrow"></span></a>

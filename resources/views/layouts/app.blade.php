@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    {!!Html::style('css/datatables.css')!!}
+
+    {!!Html::style('css/dataTables.bootstrap.css')!!}
+
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/bootstrap-editable.css')!!}
     {!!Html::style('css/bootstrap-toggle.min.css')!!}

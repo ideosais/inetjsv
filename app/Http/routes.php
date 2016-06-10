@@ -24,6 +24,9 @@ Route::group(['middelware' => 'web'], function() {
     Route::resource('empresa','EmpresasController');
     Route::resource('delegacion','DelegacionesController');
     Route::resource('/auth/list','UsuariosController');
+
+
+    Route::get('/activo/buscar','ActivosController@listar');
     Route::resource('activo','ActivosController');
 
 });
