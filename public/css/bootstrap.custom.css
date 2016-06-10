@@ -50,5 +50,13 @@ body{
     .panel-default {
         z-index: 10;
     }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-6 {
+        float: left;
+    }
 }
 
