@@ -44,7 +44,11 @@ body{
     }
 
     .navbar-static-top {
-        z-index: 0;
+        z-index: 100;
+    }
+
+    .panel-default {
+        z-index: 10;
     }
 }
 
