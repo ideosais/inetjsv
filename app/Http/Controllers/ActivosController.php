@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\ActivoCreateRequest;
 use App\Activo;
+use App\Helpers;
 use Session;
 use Redirect;
 use Illuminate\Routing\Route;
@@ -52,6 +53,12 @@ class ActivosController extends Controller
         return view('activos.create');
     }
 
+    public function edit($id)
+    {
+        $activo = Activo::find($id);
+        return view('activos.edit')->with('activo',$activo);
+    }
+
     public function store(ActivoCreateRequest $request)
     {
         $activo = new Activo;
@@ -59,6 +66,9 @@ class ActivosController extends Controller
         $activo->m_delegacion_id  = $request->input('delegacion');
         $activo->m_empresa_id  = $request->input('empresa');
         $activo->m_resp_mtmo_id  = $request->input('responsable_mtmo');
+        $activo->valor_compra = $request->input('valor_compra');
+        $activo->fecha_compra = $request->input('fecha_compra');
+        $activo->descripcion = $request->input('descripcion');
 
         $activo->save();
 
@@ -79,10 +89,16 @@ class ActivosController extends Controller
     public function update(Request $request, $id)
     {
         $activo = Activo::find($id);
+
+        //dd($request->input('fecha_compra'));
+
         $activo->nombre = $request->input('nombre');
         $activo->m_delegacion_id  = $request->input('delegacion');
         $activo->m_empresa_id  = $request->input('empresa');
         $activo->m_resp_mtmo_id  = $request->input('responsable_mtmo');
+        $activo->valor_compra = $request->input('valor_compra');
+        $activo->fecha_compra = $request->input('fecha_compra');
+        $activo->descripcion = $request->input('descripcion');
 
         $activo->save();
 

@@ -19,6 +19,22 @@
 </script>
 
 <!--- --->
+<?php
+if(isset($activo)){
+    $delegacion_val = $activo->m_delegacion_id;
+    $empresa_val = $activo->m_empresa_id;
+    $resp_mtmo_val = $activo->m_resp_mtmo_id;
+    $valor_compra = $activo->valor_compra;
+    $fecha_compra = $activo->fecha_compra;
+} else {
+    $delegacion_val = 'null';
+    $empresa_val = 'null';
+    $resp_mtmo_val = 'null';
+    $valor_compra = '';
+    $fecha_compra = '';
+}
+
+?>
 
 <div class="row">
     <div class="form-group">
@@ -30,12 +46,12 @@
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('delegacion','Delegacion: ') !!}
-                    {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control', 'placeholder' => '--- Delegación ---' ])!!}
+                    {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), $delegacion_val , ['class' => 'form-control', 'placeholder' => '--- Delegación ---' ])!!}
 
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('empresa','Empresa: ') !!}
-                    {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Empresa ---'])!!}
+                    {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , $empresa_val , ['class' => 'form-control','placeholder' => '--- Empresa ---'])!!}
                 </div>
             </div>
         </div>
@@ -50,13 +66,15 @@
             <div class="row">
                 <div class="col-xs-4">
                     {!! Form::label('valor_compra','Valor compra: ') !!}
-                    <div class="input-group"><input id="valor_compra" type="text" class="form-control" placeholder="Valor de compra" onkeyUp="return cambia_punto_coma(this);">
+                    <div class="input-group">
+                        {!! Form::text('valor_compra',null,['class'=>'form-control','placeholder'=>'Valor de compra', 'onkeyUp'=>'return cambia_punto_coma(this);'])!!}
                         <span class="input-group-addon">€</span>
                     </div>
                 </div>
                 <div class="col-xs-4" >
                     {!! Form::label('fecha_compra','Fecha compra: ') !!}
-                    <div class='input-group date' id='fecha_compra_div'><input id="fecha_compra" name="fecha_compra" type='text' class="form-control">
+                    <div class='input-group date' id='fecha_compra_div'>
+                        {!! Form::text('fecha_compra',null,['class'=>'form-control','data-date-format'=>'YYYY-MM-DD'])!!}
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                 </div>
@@ -84,7 +102,7 @@
                 </div>
                 <div class="col-xs-4">
                     {!! Form::label('responsable_mtmo','Responsable Mantenimiento: ') !!}
-                    {!!Form::select('responsable_mtmo', \App\Resp_mtmo::lists('descripcion','id') , null , ['class' => 'form-control','placeholder' => '--- Responsable ---'])!!}
+                    {!!Form::select('responsable_mtmo', \App\Resp_mtmo::lists('descripcion','id') , $resp_mtmo_val , ['class' => 'form-control','placeholder' => '--- Responsable ---'])!!}
                 </div>
             </div>
         </div>
