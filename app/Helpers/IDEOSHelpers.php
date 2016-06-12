@@ -17,13 +17,24 @@ namespace App\Helpers;
 class IDEOSHelpers
 {
 
-    public static function cambia_fecha_mysql($valor){
+    public static function cambia_fecha_a_mysql($valor){
 
         $dia = substr($valor,0,2);
         $mes = substr($valor,3,2);
         $ano = substr($valor,6,4);
 
         $result = $ano."-".$mes."-".$dia;
+
+        return $result;
+    }
+
+    public static function cambia_fecha_de_mysql($valor){
+
+        $ano = substr($valor,0,4);
+        $mes = substr($valor,5,2);
+        $dia = substr($valor,8,2);
+
+        $result = $dia."-".$mes."-".$ano;
 
         return $result;
     }

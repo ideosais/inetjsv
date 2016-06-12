@@ -5,6 +5,8 @@
         <div class="container">
 
             @include('alerts.request')
+            @include('alerts.errors')
+            @include('alerts.success')
 
             <div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display: none">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -30,7 +32,7 @@
 
                             {{ Form::open(['method'=>'GET','url'=>'/activo/buscar','role'=>'search']) }}
 
-                            @include('activos.form.activo')
+                            @include('activos.form.buscar')
 
                             <button type="submit" id="buscar_activo" class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-search"></i> Buscar activos </button>
                             {!! Form::close() !!}

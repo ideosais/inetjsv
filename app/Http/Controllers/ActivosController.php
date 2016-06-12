@@ -43,6 +43,7 @@ class ActivosController extends Controller
             if($query['delegacion'] != '')$q->where('m_delegacion_id', '=', $query['delegacion']);
             if($query['empresa'] != '')$q->where('m_empresa_id', '=', $query['empresa']);
             if($query['responsable_mtmo'] != '')$q->where('m_resp_mtmo_id', '=', $query['responsable_mtmo']);
+            if($query['alive'] == '1')$q->where('alive', '=', '1'); elseif($query['alive'] == '0')$q->where('alive', '=', '0');
         })->get();
 
         return view('activos.list',compact('activos'));
@@ -62,46 +63,59 @@ class ActivosController extends Controller
     public function store(ActivoCreateRequest $request)
     {
         $activo = new Activo;
+
+        if($request->input('alive'))
+            $alive = 1;
+        else
+            $alive = 0;
+
+        $fecha_compra = \App\Helpers\IDEOSHelpers::cambia_fecha_a_mysql($request->input('fecha_compra'));
+
         $activo->nombre = $request->input('nombre');
         $activo->m_delegacion_id  = $request->input('delegacion');
         $activo->m_empresa_id  = $request->input('empresa');
         $activo->m_resp_mtmo_id  = $request->input('responsable_mtmo');
         $activo->valor_compra = $request->input('valor_compra');
-        $activo->fecha_compra = $request->input('fecha_compra');
+        $activo->fecha_compra = $fecha_compra;
         $activo->descripcion = $request->input('descripcion');
+        $activo->alive = $alive;
 
         $activo->save();
 
+        Session::flash('message','Activo creado correctamente!');
         return redirect()->route('activo.index');
-
-        /**if($request->ajax()){
-
-            $activo = $request->all();
-
-            Activo::create($activo);
-
-            return response()->json([
-                "mensaje" => $activo
-            ]);
-        }*/
     }
 
     public function update(Request $request, $id)
     {
         $activo = Activo::find($id);
 
-        //dd($request->input('fecha_compra'));
+        if($request->input('alive'))
+            $alive = 1;
+        else
+            $alive = 0;
+
+        $fecha_compra = \App\Helpers\IDEOSHelpers::cambia_fecha_a_mysql($request->input('fecha_compra'));
 
         $activo->nombre = $request->input('nombre');
         $activo->m_delegacion_id  = $request->input('delegacion');
         $activo->m_empresa_id  = $request->input('empresa');
         $activo->m_resp_mtmo_id  = $request->input('responsable_mtmo');
         $activo->valor_compra = $request->input('valor_compra');
-        $activo->fecha_compra = $request->input('fecha_compra');
+        $activo->fecha_compra = $fecha_compra;
         $activo->descripcion = $request->input('descripcion');
+        $activo->alive = $alive;
 
         $activo->save();
 
+        Session::flash('message','Activo actualizado correctamente!');
+        return redirect()->route('activo.index');
+    }
+
+    public function destroy($id)
+    {
+        Activo::destroy($id);
+        Session::flash('message','Activo eliminado correctamente!');
         return redirect()->route('activo.index');
     }
 }

@@ -13,13 +13,13 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="text-primary">Control de Activos</h1></div>
+                        <div class="panel-heading"><h1 class="text-primary">Nuevo activo</h1></div>
                         <div class="panel-body">
 
                             {!! Form::open([ 'route' => 'activo.store', 'method' => 'POST']) !!}
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 
-                            @include('activos.form.activo')
+                            @include('activos.form.editar')
 
                             <button type="submit" id="buscar_activo" class="btn btn-lg btn-primary"><i class="fa fa-btn fa-edit"></i> Alta nuevo activo </button>
                             {!! Form::close() !!}

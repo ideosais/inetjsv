@@ -15,7 +15,7 @@
     </script>
 
 <div class="container">
-<h1 class="text-primary">Control de activos</h1>
+<h1 class="text-primary">Listado de activos</h1>
 
 <table class="table table-bordered table-hover" id="MyTable">
     <thead>
