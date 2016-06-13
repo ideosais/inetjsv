@@ -34,9 +34,9 @@
 
             <td class="text-center"><a href="#">{{ $activo->id }}</a></td>
             <td class="text-center">{{ $activo->nombre }}</td>
-            <td class="text-center">{{ \App\Delegacion::find($activo->m_delegacion_id)->descripcion }}</td>
-            <td class="text-center">{{ \App\Empresa::find($activo->m_empresa_id)->descripcion }}</td>
-            <td class="text-center">{{ \App\Resp_mtmo::find($activo->m_resp_mtmo_id)->descripcion }}</td>
+            <td class="text-center">{{ \App\Models\Maestros\Delegacion::find($activo->m_delegacion_id)->descripcion }}</td>
+            <td class="text-center">{{ \App\Models\Maestros\Empresa::find($activo->m_empresa_id)->descripcion }}</td>
+            <td class="text-center">{{ \App\Models\Activos\Resp_mtmo::find($activo->m_resp_mtmo_id)->descripcion }}</td>
             {!! Form::open(['route' => ['activo.destroy', $activo->id], 'method' => 'DELETE']) !!}
 
             <td class="text-center">

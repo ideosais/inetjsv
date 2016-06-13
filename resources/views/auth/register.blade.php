@@ -52,7 +52,7 @@
 
             <div class="form-group{{ $errors->has('delegacion') ? ' has-error' : '' }}">
 
-                {!!Form::select('delegacion', \App\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control input-lg', 'placeholder' => '--- Selecciona delegación ---' ])!!}
+                {!!Form::select('delegacion', \App\Models\Maestros\Delegacion::lists('descripcion','id'), null , ['class' => 'form-control input-lg', 'placeholder' => '--- Selecciona delegación ---' ])!!}
 
                 @if ($errors->has('delegacion'))
                     <span class="help-block">
@@ -64,7 +64,7 @@
 
             <div class="form-group{{ $errors->has('empresa') ? ' has-error' : '' }}">
 
-                {!!Form::select('empresa', \App\Empresa::lists('descripcion','id') , null , ['class' => 'form-control input-lg','placeholder' => '--- Selecciona empresa ---'])!!}
+                {!!Form::select('empresa', \App\Models\Maestros\Empresa::lists('descripcion','id') , null , ['class' => 'form-control input-lg','placeholder' => '--- Selecciona empresa ---'])!!}
 
                 @if ($errors->has('empresa'))
                     <span class="help-block">
