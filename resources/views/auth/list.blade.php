@@ -128,11 +128,11 @@
             </td>
 
             <td class="text-center">
-                <a href="#" data-type="select" data-pk="{{ $usuario->id }}" data-name="m_delegacion_id" data-showbuttons="false" data-source='/delegacion' class="editable editable-click" >{{ \App\Delegacion::find($usuario->m_delegacion_id)->descripcion }}</a>
+                <a href="#" data-type="select" data-pk="{{ $usuario->id }}" data-name="m_delegacion_id" data-showbuttons="false" data-source='/delegacion' class="editable editable-click" >{{ \App\Models\Maestros\Delegacion::find($usuario->m_delegacion_id)->descripcion }}</a>
             </td>
 
             <td class="text-center">
-                <a href="#" data-type="select" data-pk="{{ $usuario->id }}" data-name="m_empresa_id" data-showbuttons="false" data-source='/empresa' class="editable editable-click" >{{ \App\Empresa::find($usuario->m_empresa_id)->descripcion }}</a>
+                <a href="#" data-type="select" data-pk="{{ $usuario->id }}" data-name="m_empresa_id" data-showbuttons="false" data-source='/empresa' class="editable editable-click" >{{ \App\Models\Maestros\Empresa::find($usuario->m_empresa_id)->descripcion }}</a>
             </td>
 
             <td class="text-center">
@@ -210,6 +210,7 @@
     </tr>
     </tfoot>
 </table>
+</div>
 
     <script>
         $(function() {

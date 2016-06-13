@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Resp_mtmo;
+use App\Models\Activos\Resp_mtmo;
 use Session;
 use Redirect;
 use Illuminate\Routing\Route;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Closure;z
+use Closure;
 
 class Admin
 {

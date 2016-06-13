@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Delegacion;
-use App\Empresa;
 
 class HomeController extends Controller
 {

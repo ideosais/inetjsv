@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\ActivoCreateRequest;
-use App\Activo;
+use App\Models\Activos\Activo;
 use App\Helpers;
 use Session;
 use Redirect;

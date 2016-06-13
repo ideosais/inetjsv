@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Delegacion;
+use App\Models\Maestros\Delegacion;
 use Session;
 use Redirect;
 use Illuminate\Routing\Route;

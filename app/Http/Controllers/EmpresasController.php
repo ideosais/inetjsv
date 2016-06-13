@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Empresa;
+use App\Models\Maestros\Empresa;
 use Session;
 use Redirect;
 
