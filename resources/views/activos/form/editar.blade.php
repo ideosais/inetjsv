@@ -70,8 +70,9 @@ else
 <div>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#sectionA">Datos básicos</a></li>
-        <li><a data-toggle="tab" href="#sectionB">Datos contables</a></li>
+        <li class="active"><a data-toggle="tab" href="#sectionA">General</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Contabilidad</a></li>
+        <li><a data-toggle="tab" href="#sectionC">Mantenimiento</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -146,6 +147,12 @@ else
                     </div>
                 </div>
             </div>
+
+            @include('activos.form.separador')
+
+            </div>
+
+            <div id="sectionC" class="tab-pane fade">
 
             @include('activos.form.separador')
 
