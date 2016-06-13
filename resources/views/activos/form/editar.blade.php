@@ -14,6 +14,29 @@
                 down: "fa fa-arrow-down"
             }
         });
+
+        $('#grupo_id').on('change', function(e){
+
+            var grupo_id = e.target.value;
+
+            //ajax
+
+            $.get('/activo/clase-dropdown?id=' + grupo_id, function(data){
+
+                //success data
+                $('#clase_id').empty();
+
+                $('#clase_id').append('<option selected="selected" value="">--- Clase ---</option>');
+
+                $.each(data, function(index, subcatObj){
+
+                    console.log( index + ": " + subcatObj.id + " --- " + subcatObj.descripcion );
+
+                    $('#clase_id').append('<option value="'
+                            + subcatObj.id + '">' + subcatObj.descripcion + '</option');
+                });
+            });
+        });
     });
 
 </script>
@@ -24,16 +47,18 @@ if(isset($activo)){
     $delegacion_val = $activo->m_delegacion_id;
     $empresa_val = $activo->m_empresa_id;
     $resp_mtmo_val = $activo->m_resp_mtmo_id;
-    $valor_compra = $activo->valor_compra;
-    $fecha_compra = \App\Helpers\IDEOSHelpers::cambia_fecha_de_mysql($activo->fecha_compra);
+    $fecha_compra_val = \App\Helpers\IDEOSHelpers::cambia_fecha_de_mysql($activo->fecha_compra);
     $alive = $activo->alive;
+    $grupo_val = $activo->m_grupo_id;
+    $clase_val = $activo->m_clase_id;
 } else {
     $delegacion_val = 'null';
     $empresa_val = 'null';
     $resp_mtmo_val = 'null';
-    $valor_compra = '';
-    $fecha_compra = '';
+    $fecha_compra_val = '';
     $alive = '0';
+    $grupo_val = 'null';
+    $clase_val = 'null';
 }
 
 if($alive)
@@ -80,7 +105,7 @@ else
                 <div class="col-xs-4" >
                     {!! Form::label('fecha_compra','Fecha compra: ') !!}
                     <div class='input-group date' id='fecha_compra_div'>
-                        {!! Form::text('fecha_compra',$fecha_compra,['class'=>'form-control','data-date-format'=>'DD-MM-YYYY'])!!}
+                        {!! Form::text('fecha_compra',$fecha_compra_val,['class'=>'form-control','data-date-format'=>'DD-MM-YYYY'])!!}
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                 </div>
@@ -116,4 +141,25 @@ else
 </div>
 
 <div class="row"><div class="form-group"><div class="col-md-10"></div></div></div>
+
+<div class="row">
+    <div class="form-group">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    {!! Form::label('grupo','Grupo: ') !!}
+                    {!!Form::select('grupo', \App\Models\Activos\Grupo_activo::lists('descripcion','id'), $grupo_val , ['id'=>'grupo_id', 'class' => 'form-control', 'placeholder' => '--- Grupo ---' ])!!}
+
+                </div>
+                <div class="col-xs-4">
+                    {!! Form::label('clase','Clase: ') !!}
+                    {!!Form::select('clase', \App\Models\Activos\Clase_activo::lists('descripcion','id') , $clase_val , ['id'=>'clase_id', 'class' => 'form-control','placeholder' => '--- Clase ---'])!!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row"><div class="form-group"><div class="col-md-10"></div></div></div>
+
 

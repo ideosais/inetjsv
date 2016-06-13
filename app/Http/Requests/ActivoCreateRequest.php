@@ -28,6 +28,8 @@ class ActivoCreateRequest extends Request
             'delegacion' => 'required',
             'empresa' => 'required',
             'responsable_mtmo' => 'required',
+            'grupo' => 'required',
+            'clase' => 'required',
         ];
     }
 }

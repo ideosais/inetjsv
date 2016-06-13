@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activos\Clase_activo;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\ActivoCreateRequest;
@@ -44,9 +45,22 @@ class ActivosController extends Controller
             if($query['empresa'] != '')$q->where('m_empresa_id', '=', $query['empresa']);
             if($query['responsable_mtmo'] != '')$q->where('m_resp_mtmo_id', '=', $query['responsable_mtmo']);
             if($query['alive'] == '1')$q->where('alive', '=', '1'); elseif($query['alive'] == '0')$q->where('alive', '=', '0');
+            if($query['grupo'] != '')$q->where('m_grupo_id', '=', $query['grupo']);
+            if($query['clase'] != '')$q->where('m_clase_id', '=', $query['clase']);
         })->get();
 
         return view('activos.list',compact('activos'));
+    }
+
+    public function claseDropDownData(Request $request)
+    {
+        $grupo_id = $request->id;
+
+        $clases = Clase_activo::where('grupo_id', '=', $grupo_id)
+            ->orderBy('descripcion', 'asc')
+            ->get();
+
+        return response()->json($clases);
     }
 
     public function create()
@@ -79,6 +93,8 @@ class ActivosController extends Controller
         $activo->fecha_compra = $fecha_compra;
         $activo->descripcion = $request->input('descripcion');
         $activo->alive = $alive;
+        $activo->m_grupo_id  = $request->input('grupo');
+        $activo->m_clase_id  = $request->input('clase');
 
         $activo->save();
 
@@ -105,17 +121,22 @@ class ActivosController extends Controller
         $activo->fecha_compra = $fecha_compra;
         $activo->descripcion = $request->input('descripcion');
         $activo->alive = $alive;
+        $activo->m_grupo_id  = $request->input('grupo');
+        $activo->m_clase_id  = $request->input('clase');
 
         $activo->save();
 
         Session::flash('message','Activo actualizado correctamente!');
-        return redirect()->route('activo.index');
+        //return redirect()->route('activo.index');
+        return redirect()->back();
     }
 
     public function destroy($id)
     {
         Activo::destroy($id);
         Session::flash('message','Activo eliminado correctamente!');
-        return redirect()->route('activo.index');
+
+        return redirect()->back();
+        //return redirect()->route('activo.index');
     }
 }

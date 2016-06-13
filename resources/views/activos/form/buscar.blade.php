@@ -14,7 +14,32 @@
                 down: "fa fa-arrow-down"
             }
         });
+
+        $('#grupo_id').on('change', function(e){
+
+            var grupo_id = e.target.value;
+
+            //ajax
+
+            $.get('/activo/clase-dropdown?id=' + grupo_id, function(data){
+
+                //success data
+                $('#clase_id').empty();
+
+                $('#clase_id').append('<option selected="selected" value="">--- Clase ---</option>');
+
+                $.each(data, function(index, subcatObj){
+
+                    console.log( index + ": " + subcatObj.id + " --- " + subcatObj.descripcion );
+
+                    $('#clase_id').append('<option value="'
+                            + subcatObj.id + '">' + subcatObj.descripcion + '</option');
+                });
+            });
+        });
     });
+
+
 
 </script>
 
@@ -96,3 +121,22 @@
 
 <div class="row"><div class="form-group"><div class="col-md-10"></div></div></div>
 
+<div class="row">
+    <div class="form-group">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    {!! Form::label('grupo','Grupo: ') !!}
+                    {!!Form::select('grupo', \App\Models\Activos\Grupo_activo::lists('descripcion','id'), null , ['id'=>'grupo_id', 'class' => 'form-control', 'placeholder' => '--- Grupo ---' ])!!}
+
+                </div>
+                <div class="col-xs-4">
+                    {!! Form::label('clase','Clase: ') !!}
+                    {!!Form::select('clase', \App\Models\Activos\Clase_activo::lists('descripcion','id') , null , ['id'=>'clase_id', 'class' => 'form-control','placeholder' => '--- Clase ---'])!!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row"><div class="form-group"><div class="col-md-10"></div></div></div>

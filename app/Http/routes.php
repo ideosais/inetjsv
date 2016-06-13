@@ -27,6 +27,7 @@ Route::group(['middelware' => 'web'], function() {
 
 
     Route::get('/activo/buscar','ActivosController@listar');
+    Route::get('activo/clase-dropdown', 'ActivosController@claseDropDownData');
     Route::resource('activo','ActivosController');
 
 });

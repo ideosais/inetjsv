@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @include('alerts.request')
+    @include('alerts.errors')
+    @include('alerts.success')
+
     <script>
         $(document).ready(function(){
 
@@ -9,6 +13,11 @@
                 "language": {
                     "url": "/lang/datatables.es.lang"
                 }
+            });
+
+            $('.launch-modal').on('click', function(e){
+                e.preventDefault();
+                $('#myModal').modal('show').find('.modal-body').load($(this).attr('href'));
             });
 
         });
@@ -40,7 +49,8 @@
             {!! Form::open(['route' => ['activo.destroy', $activo->id], 'method' => 'DELETE']) !!}
 
             <td class="text-center">
-                <a href="{{ url('/activo/'.$activo->id.'/edit') }}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                <a href="{{ url('/activo/'.$activo->id.'/edit') }}" class="btn btn-info btn-xs launch-modal"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+
                 <button type="submit" class="btn btn-danger btn-xs">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
@@ -62,5 +72,17 @@
     </tr>
     </tfoot>
 </table>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection

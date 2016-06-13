@@ -4,9 +4,9 @@ namespace App\Models\Activos;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Resp_mtmo extends Model
+class Clase_activo extends Model
 {
-    protected $table = 'conta_m_resp_mtmo';
+    protected $table = 'conta_m_clase_activos';
     protected $fillable = ['alias','descripcion'];
 
     public function activos()
@@ -14,4 +14,7 @@ class Resp_mtmo extends Model
         return $this->hasMany('App\Models\Activos\Activo');
     }
 
+    function grupo_activo() {
+        return $this->belongsTo('Grupo_activo');
+    }
 }

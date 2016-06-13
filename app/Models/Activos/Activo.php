@@ -28,4 +28,12 @@ class Activo extends Model
     function resp_mtmo() {
         return $this->hasOne('Resp_mtmo','m_resp_mtmo_id', 'id');
     }
+
+    function grupo_activo() {
+        return $this->hasOne('Grupo_activo','m_grupo_id', 'id');
+    }
+
+    function clase_activo() {
+        return $this->hasOne('Resp_mtmo','m_clase_id', 'id');
+    }
 }
