@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3affd7373c5cf115be8051c3b16f030d",
-    "content-hash": "e44006aee004f1baa723471385acd28c",
+    "hash": "01457385acb85c4d606179b921ca42c6",
+    "content-hash": "dd5ec7de5c7a4d4ab7e9a7f2bc196442",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1088,6 +1088,55 @@
                 "debugbar"
             ],
             "time": "2016-01-22 12:22:23"
+        },
+        {
+            "name": "milon/barcode",
+            "version": "5.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milon/barcode.git",
+                "reference": "5b5646e9f7b56c965655cc6656593268b95058b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milon/barcode/zipball/5b5646e9f7b56c965655cc6656593268b95058b0",
+                "reference": "5b5646e9f7b56c965655cc6656593268b95058b0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Milon\\Barcode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nuruzzaman Milon",
+                    "email": "milon521@gmail.com"
+                }
+            ],
+            "description": "Barcode generator like Qr Code , PDF417,C39, C39+,C39E,C39E+,C93,S25,S25+,I25,I25+,C128,C128A,C128B,C128C,2-Digits UPC-Based Extention,5-Digits UPC-Based Extention,EAN 8,EAN 13,UPC-A,UPC-E,MSI (Variation of Plessey code) ",
+            "keywords": [
+                "CODABAR",
+                "CODE 128",
+                "CODE 39",
+                "barcode",
+                "datamatrix",
+                "ean",
+                "laravel",
+                "pdf417",
+                "qr code",
+                "qrcode"
+            ],
+            "time": "2016-02-22 09:01:48"
         },
         {
             "name": "monolog/monolog",

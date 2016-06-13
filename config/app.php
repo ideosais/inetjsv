@@ -162,6 +162,11 @@ return [
         */
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        /*
+         * Barcode class Providers...
+        */
+        Milon\Barcode\BarcodeServiceProvider::class
+
 
     ],
 
@@ -210,9 +215,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Helper' => App\Helpers::class,
+        'Helper' => App\Helpers\Helpers::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+        'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
     ],
 
 ];

@@ -85,6 +85,9 @@ class ActivosController extends Controller
 
         $fecha_compra = \App\Helpers\IDEOSHelpers::cambia_fecha_a_mysql($request->input('fecha_compra'));
 
+        $codigo = substr(md5(uniqid(rand(1,6))), 0, 8);
+
+        $activo->codigo = $codigo;
         $activo->nombre = $request->input('nombre');
         $activo->m_delegacion_id  = $request->input('delegacion');
         $activo->m_empresa_id  = $request->input('empresa');

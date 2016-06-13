@@ -1,29 +1,3 @@
-{!!Html::style('css/dataTables.bootstrap.css')!!}
-
-{!!Html::style('css/bootstrap.min.css')!!}
-{!!Html::style('css/bootstrap-editable.css')!!}
-{!!Html::style('css/bootstrap-toggle.min.css')!!}
-{!!Html::style('css/bootstrap-datetimepicker.min.css')!!}
-{!!Html::style('css/fontawesome-iconpicker.min.css')!!}
-{!!Html::style('css/bootstrap.custom.css')!!}
-{!!Html::style('css/sb-admin-2.css')!!}
-{!!Html::style('css/login.css')!!}
-{!!Html::style('css/font-awesome.min.css')!!}
-
-
-{!!Html::script('js/jquery.min.js')!!}
-{!!Html::script('js/bootstrap.min.js')!!}
-{!!Html::script('js/bootstrap-editable.min.js')!!}
-{!!Html::script('js/bootstrap-toggle.min.js')!!}
-{!!Html::script('js/moment.js')!!}
-{!!Html::script('js/locale/es.js')!!}
-{!!Html::script('js/bootstrap-datetimepicker.min.js')!!}
-{!!Html::script('js/fontawesome-iconpicker.js')!!}
-{!!Html::script('js/iconset-glyphicon.min.js')!!}
-{!!Html::script('js/metisMenu.min.js')!!}
-{!!Html::script('js/sb-admin-2.js')!!}
-{!!Html::script('js/alert.js')!!}
-{!!Html::script('js/datatables.js')!!}
 
 <div class="container">
 
@@ -34,7 +8,11 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><h1 class="text-primary">Editar activo ID: {{$activo->id}}</h1></div>
+                <div class="panel-heading">
+                    <h1 class="text-primary">Editar activo ID: {{$activo->codigo}}
+                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG($activo->codigo, 'QRCODE')}}" alt="barcode" style="float: right; margin-top: -15px;">
+                    </h1>
+                </div>
                 <div class="panel-body">
 
                     {!! Form::model($activo, [ 'route' => ['activo.update', $activo], 'method' => 'PUT']) !!}
