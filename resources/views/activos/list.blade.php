@@ -19,18 +19,6 @@
                 e.preventDefault();
                 $('#myModal').modal('show').find('.modal-body').load($(this).attr('href'));
             });
-
-            $("#exportExcel").click(function(){
-                $('<table>')
-                        .append(
-                                $("#MyTable").DataTable().$('tr').clone()
-                        )
-                        .table2excel({
-                            exclude: ".excludeThisClass",
-                            name: "Worksheet Name",
-                            filename: "SomeFile" //do not include extension
-                        });
-            });
         });
     </script>
 
