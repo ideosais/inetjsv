@@ -1,9 +1,17 @@
 body{
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:12px;
+    font-size: small;
     line-height:1.42857143;
     color:#333;
     background-color:#fff
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: small;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width:768px){

@@ -19,13 +19,50 @@
                 e.preventDefault();
                 $('#myModal').modal('show').find('.modal-body').load($(this).attr('href'));
             });
+
+            $("#exportExcel").click(function(){
+                $('<table>')
+                        .append(
+                                $("#MyTable").DataTable().$('tr').clone()
+                        )
+                        .table2excel({
+                            exclude: ".excludeThisClass",
+                            name: "Worksheet Name",
+                            filename: "SomeFile" //do not include extension
+                        });
+            });
         });
     </script>
 
-<div class="container">
+
 <h1 class="text-primary">Listado de activos</h1>
 
-<table class="table table-bordered table-hover" id="MyTable">
+    <div class="btn-group">
+        <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Exportar Datos</button>
+        <ul class="dropdown-menu " role="menu">
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'json',escape:'false'});"> <img src='{{ URL::to('img/icons/json.png') }}' width='24px'> JSON</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});"> <img src='{{ URL::to('img/icons/json.png') }}' width='24px'> JSON (ignoreColumn)</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'json',escape:'true'});"> <img src='{{ URL::to('img/icons/json.png') }}' width='24px'> JSON (with Escape)</a></li>
+            <li class="divider"></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'xml',escape:'false'});"> <img src='{{ URL::to('img/icons/xml.png')}}' width='24px'> XML</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'sql'});"> <img src='{{ URL::to('img/icons/sql.png') }}' width='24px'> SQL</a></li>
+            <li class="divider"></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'csv',escape:'false'});"> <img src='{{ URL::to('img/icons/csv.png') }}' width='24px'> CSV</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'txt',escape:'false'});"> <img src='{{ URL::to('img/icons/txt.png') }}' width='24px'> TXT</a></li>
+            <li class="divider"></li>
+
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'excel',escape:'false'});"> <img src='{{ URL::to('img/icons/xls.png') }}' width='24px'> XLS</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'doc',escape:'false'});"> <img src='{{ URL::to('img/icons/word.png') }}' width='24px'> Word</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'powerpoint',escape:'false'});"> <img src='{{ URL::to('img/icons/ppt.png') }}' width='24px'> PowerPoint</a></li>
+            <li class="divider"></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'png',escape:'false'});"> <img src='{{ URL::to('img/icons/png.png') }}' width='24px'> PNG</a></li>
+            <li><a href="#" onClick ="$('#MyTable').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"> <img src='{{ URL::to('img/icons/pdf.png') }}' width='24px'> PDF</a></li>
+        </ul>
+    </div>
+
+    @include('activos.form.separador')
+
+    <table class="table table-bordered table-hover" id="MyTable">
     <thead>
     <tr>
         <th class="text-center">ID</th>

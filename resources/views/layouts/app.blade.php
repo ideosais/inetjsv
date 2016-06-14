@@ -33,6 +33,12 @@
     {!!Html::script('js/sb-admin-2.js')!!}
     {!!Html::script('js/alert.js')!!}
     {!!Html::script('js/datatables.js')!!}
+    {!!Html::script('js/tableExport.js')!!}
+    {!!Html::script('js/jquery.base64.js')!!}
+    {!!Html::script('js/jspdf/libs/sprintf.js')!!}
+    {!!Html::script('js/jspdf/jspdf.js')!!}
+    {!!Html::script('js/jspdf/libs/base64.js')!!}
+    {!!Html::script('js/html2canvas.js')!!}
 
 
 </head>
